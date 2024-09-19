@@ -8,3 +8,5 @@ Movimentação fluida: Andar, pular e controlar o personagem com precisão.
 Dash: Um movimento de impulso rápido para escapar de armadilhas ou alcançar lugares distantes.
 Tiro: O personagem pode atirar em inimigos e obstáculos.
 3 fases: Cada fase oferece novos desafios, aumentando progressivamente a dificuldade.
+
+![Coelho Soldado](Animaçoes/Parado_1)

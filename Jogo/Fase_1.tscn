@@ -1,0 +1,422 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Animaçoes/Parado/Parado_2.png" type="Texture" id=1]
+[ext_resource path="res://Animaçoes/Parado/Parado_1_.png" type="Texture" id=2]
+[ext_resource path="res://script/Jogador.gd" type="Script" id=3]
+[ext_resource path="res://Animaçoes/Cenario/Grama.png" type="Texture" id=4]
+[ext_resource path="res://Animaçoes/Cenario/Grama_right.png" type="Texture" id=5]
+[ext_resource path="res://Animaçoes/Cenario/Grama_left.png" type="Texture" id=6]
+[ext_resource path="res://Animaçoes/Cenario/Grama_Hollow.png" type="Texture" id=7]
+[ext_resource path="res://Animaçoes/Cenario/Grama_center.png" type="Texture" id=8]
+[ext_resource path="res://Animaçoes/Correndo/Run_2.png" type="Texture" id=9]
+[ext_resource path="res://Animaçoes/Correndo/Run_3.png" type="Texture" id=10]
+[ext_resource path="res://Animaçoes/Correndo/Run_1.png" type="Texture" id=11]
+[ext_resource path="res://Animaçoes/Hit.png" type="Texture" id=12]
+[ext_resource path="res://Animaçoes/Pulo.png" type="Texture" id=13]
+[ext_resource path="res://Animaçoes/Correndo/Run_4.png" type="Texture" id=14]
+[ext_resource path="res://Animaçoes/Dash.png" type="Texture" id=15]
+[ext_resource path="res://Animaçoes/Cenario/Fase_1.png" type="Texture" id=16]
+[ext_resource path="res://Fundo/bg_1.png" type="Texture" id=17]
+[ext_resource path="res://Fundo/Background_2.png" type="Texture" id=18]
+[ext_resource path="res://Fundo/bg_5.png" type="Texture" id=19]
+[ext_resource path="res://Fundo/bg_3.png" type="Texture" id=20]
+[ext_resource path="res://Fundo/bg_4.png" type="Texture" id=21]
+[ext_resource path="res://Fundo/bg_2.png" type="Texture" id=22]
+
+[sub_resource type="TileSet" id=5]
+0/name = "Grama.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Grama_Hollow.png 1"
+1/texture = ExtResource( 7 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Grama_left.png 2"
+2/texture = ExtResource( 6 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Grama_right.png 3"
+3/texture = ExtResource( 5 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 64, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Grama_center.png 4"
+4/texture = ExtResource( 8 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 91.125, 32.5 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 25, 540.5 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "Dash"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jogador/Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jogador/Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Hit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jogador/Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jogador/Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 12 ), ExtResource( 2 ), ExtResource( 12 ), ExtResource( 2 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Jump"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jogador/Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jogador/Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Jogador/Texture:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jogador/Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jogador/Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Run"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jogador/Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jogador/Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 14 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jogador/Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jogador/Texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 8.64197, 23.4568 )
+
+[node name="Fase_1" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [ -839.0 ]
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 5 )
+collision_layer = 2
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( 65604, 0, 0, 65605, 0, 0, 65606, 0, 0, 131144, 0, 0, 131145, 0, 0, 131146, 0, 0, 196676, 0, 0, 196677, 0, 0, 196678, 0, 0, 262216, 0, 0, 262217, 0, 0, 262218, 0, 0, 327748, 0, 0, 327749, 0, 0, 327750, 0, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="Colisao_Cenario" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -32, 488, 24, 488, 144, 488, 224, 488, 280, 504, 336, 528, 384, 536, 432, 536, 488, 536, 544, 528, 568, 512, 600, 496, 640, 472, 704, 472, 784, 472, 856, 480, 928, 488, 1016, 496, 1112, 512, 1184, 520, 1256, 520, 1328, 536, 1408, 536, 1472, 536, 1496, 536, 1464, 496, 1464, 480, 1464, 456, 1504, 456, 1528, 400, 1560, 392, 1656, 392, 1656, 448, 1672, 456, 1696, 472, 1704, 496, 1720, 504, 1720, 520, 1720, 536, 1752, 536, 1800, 536, 1896, 536, 1984, 536, 2048, 536, 2136, 528, 2248, 520, 2360, 520, 2472, 520, 2608, 520, 2736, 520, 2856, 520, 3000, 520, 3160, 520, 3264, 512, 3392, 496, 3424, 448, 3496, 344, 3552, 248, 3688, 248, 3728, 128, 3768, -8, 3920, -8, 3936, -16, 3968, -96, 3984, -176, 4144, -176, 4168, -152, 4192, -96, 4192, -24, 4184, 72, 4192, 152, 4200, 232, 4200, 296, 4208, 352, 4216, 440, 4224, 512, 4224, 576, 4176, 576, -32, 576 )
+
+[node name="Cenario" type="Sprite" parent="StaticBody2D/Colisao_Cenario"]
+position = Vector2( 2880, 128 )
+scale = Vector2( 0.82963, 0.82963 )
+texture = ExtResource( 16 )
+
+[node name="Plataforma" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 4449.75, 96 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="Plataforma2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 4448, 224 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="Plataforma3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 4448, 352 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="Plataforma4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 4708.88, 160 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="Plataforma5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 4704, 288 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -35, 56.5 )
+shape = SubResource( 12 )
+
+[node name="Jogador" type="KinematicBody2D" parent="."]
+position = Vector2( 496, 304 )
+scale = Vector2( 3.24, 3.24 )
+collision_mask = 6
+script = ExtResource( 3 )
+
+[node name="Anim" type="AnimationPlayer" parent="Jogador"]
+root_node = NodePath("../..")
+autoplay = "idle"
+anims/Dash = SubResource( 10 )
+anims/Hit = SubResource( 6 )
+anims/Jump = SubResource( 7 )
+anims/RESET = SubResource( 2 )
+anims/Run = SubResource( 8 )
+anims/idle = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jogador"]
+light_mask = 2
+position = Vector2( 1.23459, -3.70368 )
+shape = SubResource( 9 )
+
+[node name="Texture" type="Sprite" parent="Jogador"]
+scale = Vector2( 0.0814814, 0.0814815 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -520, -580 )
+
+[node name="Camera2D" type="Camera2D" parent="Jogador"]
+position = Vector2( 4.93828, -9.87654 )
+current = true
+limit_left = -23
+limit_bottom = 570
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="05" type="ParallaxLayer" parent="Background"]
+position = Vector2( 0.1, 0 )
+motion_mirroring = Vector2( 1080, 0 )
+
+[node name="texture2" type="Sprite" parent="Background/05"]
+position = Vector2( -8.1, -1216 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="texture" type="Sprite" parent="Background/05"]
+position = Vector2( -8, -320 )
+texture = ExtResource( 21 )
+centered = false
+
+[node name="04" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1080, 0 )
+
+[node name="texture" type="Sprite" parent="Background/04"]
+position = Vector2( -8, -320 )
+texture = ExtResource( 18 )
+centered = false
+
+[node name="03" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 1080, 0 )
+
+[node name="texture" type="Sprite" parent="Background/03"]
+position = Vector2( 16, -392 )
+texture = ExtResource( 20 )
+centered = false
+
+[node name="02" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1080, 0 )
+
+[node name="texture" type="Sprite" parent="Background/02"]
+position = Vector2( -24, -360 )
+texture = ExtResource( 22 )
+centered = false
+
+[node name="01" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 1080, 0 )
+
+[node name="texture" type="Sprite" parent="Background/01"]
+position = Vector2( 8, -352 )
+texture = ExtResource( 17 )
+centered = false

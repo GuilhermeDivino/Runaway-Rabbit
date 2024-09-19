@@ -4,15 +4,11 @@ Este é um jogo de plataforma 2D desenvolvido como parte de um projeto para a UN
 
 Principais funcionalidades:
 
-* Movimentação fluida: Andar, pular e controlar o personagem com precisão.
-![correndo](https://github.com/user-attachments/assets/9720866c-1527-4352-996f-d32956ec6674)
-![parado](https://github.com/user-attachments/assets/2c3a5ed9-bbf7-4532-8f1d-8582ab151a82)
-
-* Dash: Um movimento de impulso rápido para escapar de armadilhas ou alcançar lugares distantes.
-  ![Dash](https://github.com/user-attachments/assets/ae462ec8-0115-4c2b-af9c-2128601c029b)
-
-* Tiro: O personagem pode atirar em inimigos e obstáculos.
-  ![tiro](https://github.com/user-attachments/assets/53a4ae37-8de8-44ba-ab94-50f3f18c0b4c)
-
-3 fases: Cada fase oferece novos desafios, aumentando progressivamente a dificuldade.
+* Movimentação fluida: Andar, pular e controlar o personagem com precisão. ![correndo_pequeno](https://github.com/user-attachments/assets/7914a590-a0f3-4836-9c97-40dd223ed4da)![parado_pequeno](https://github.com/user-attachments/assets/78fcf74a-ebb2-4579-9877-7ea628132d68)
+  
+* Dash: Um movimento de impulso rápido para escapar de armadilhas ou alcançar lugares distantes. ![dash_pequeno](https://github.com/user-attachments/assets/93ada9f4-b958-4c94-bb54-145ee07e3761)
+  
+* Tiro: O personagem pode atirar em inimigos e obstáculos.![tiro](https://github.com/user-attachments/assets/7021089e-dfde-40ea-be4b-c1b19af28dff)
+  
+* 3 fases: Cada fase oferece novos desafios, aumentando progressivamente a dificuldade.
 

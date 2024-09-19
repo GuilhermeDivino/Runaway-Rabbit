@@ -9,4 +9,4 @@ Dash: Um movimento de impulso rápido para escapar de armadilhas ou alcançar lu
 Tiro: O personagem pode atirar em inimigos e obstáculos.
 3 fases: Cada fase oferece novos desafios, aumentando progressivamente a dificuldade.
 
-![Coelho Soldado](Animaçoes/Parado_1)
+![Coelho_Soldado](https://github.com/user-attachments/assets/125bb1c0-9b27-4d65-8dce-ec1bd627c229)

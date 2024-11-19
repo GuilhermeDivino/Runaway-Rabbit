@@ -145,7 +145,8 @@ extents = Vector2( 487.5, 56.5 )
 [node name="Inimigo" type="Node2D"]
 
 [node name="Inimigo_tiro" type="KinematicBody2D" parent="."]
-collision_layer = 2
+collision_layer = 4
+collision_mask = 3
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo_tiro"]
@@ -165,7 +166,10 @@ anims/parado = SubResource( 6 )
 
 [node name="area2d" type="Area2D" parent="."]
 collision_layer = 2
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area2d"]
 position = Vector2( -9.5, 1 )
 shape = SubResource( 7 )
+
+[connection signal="body_entered" from="area2d" to="Inimigo_tiro" method="causar_dano"]

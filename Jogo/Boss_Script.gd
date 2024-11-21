@@ -11,7 +11,7 @@ var fire_rate = 1.5  # Intervalo entre disparos (em segundos)
 var fire_timer = 0.0  # Contador interno para o próximo disparo
 
 # Variáveis de vida
-var health = 20  # Número de hits necessários para destruir o boss
+var health = 3  # Número de hits necessários para destruir o boss
 
 func _physics_process(delta):
 	# Movimento vertical
@@ -36,10 +36,13 @@ func shoot_projectile():
 		projectile.position = position + Vector2(-25, -35)  # Ajusta -20 no eixo Y (para cima)
 		get_parent().add_child(projectile)
 
-func _on_Hitbox_area_entered(area):
-	# Reduz a vida do boss quando um projétil do jogador o atinge
-	if area.name == "Cena_Tiro":  # Verifica o nome da cena do disparo do jogador
-		health -= 1
+func _on_Area2D_area_entered(area):
+	# Verifica se o projétil pertence ao jogador
+	if area.is_in_group("Cena_tiro"):  # Use grupos para identificar projéteis
+		health -= 1  # Reduz a vida do boss
 		area.queue_free()  # Remove o projétil do jogador
 		if health <= 0:
 			queue_free()  # Remove o boss quando a vida chega a zero
+
+
+

@@ -1,0 +1,326 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://cena_vidas.tscn" type="PackedScene" id=1]
+[ext_resource path="res://script/Jogador.gd" type="Script" id=2]
+[ext_resource path="res://Animaçoes/Parado/Parado_2.png" type="Texture" id=3]
+[ext_resource path="res://Animaçoes/Parado/Parado_1_.png" type="Texture" id=4]
+[ext_resource path="res://Animaçoes/Hit.png" type="Texture" id=5]
+[ext_resource path="res://Animaçoes/Correndo/Run_3.png" type="Texture" id=6]
+[ext_resource path="res://Animaçoes/Correndo/Run_4.png" type="Texture" id=7]
+[ext_resource path="res://Animaçoes/Correndo/Run_2.png" type="Texture" id=8]
+[ext_resource path="res://Animaçoes/Pulo.png" type="Texture" id=9]
+[ext_resource path="res://Animaçoes/Dash.png" type="Texture" id=10]
+[ext_resource path="res://Animaçoes/Correndo/Run_1.png" type="Texture" id=11]
+[ext_resource path="res://fase2/fase_2.png" type="Texture" id=12]
+[ext_resource path="res://fase2/Boss_ovo.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Cena_Inimigo.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Fundo/bg_1.png" type="Texture" id=15]
+[ext_resource path="res://Fundo/Background_2.png" type="Texture" id=16]
+[ext_resource path="res://Fundo/bg_5.png" type="Texture" id=17]
+[ext_resource path="res://Fundo/bg_4.png" type="Texture" id=18]
+[ext_resource path="res://Fundo/bg_3.png" type="Texture" id=19]
+[ext_resource path="res://Fundo/bg_2.png" type="Texture" id=20]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Dash"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jogador/Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jogador/Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Hit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jogador/Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jogador/Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Jump"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jogador/Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jogador/Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Jogador/Texture:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jogador/Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jogador/Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 3 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Run"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jogador/Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jogador/Texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 7 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle"
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jogador/Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ), ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Jogador/Texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 8.64197, 23.4568 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "dano"
+
+[node name="Fase_2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -7, -29 )
+collision_layer = 2
+collision_mask = 5
+
+[node name="Cenario" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 10, 493, 297, 466, 562, 468, 1461, 476, 1464, 427, 1492, 390, 1566, 390, 1702, 328, 1832, 316, 1912, 278, 1927, 275, 1918, 537, 3285, 534, 3288, 261, 3369, 261, 3382, 719, -18, 648, -35, 473 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D/Cenario"]
+position = Vector2( 1680, 308 )
+scale = Vector2( 0.562963, 0.562963 )
+texture = ExtResource( 12 )
+
+[node name="Inimigo" parent="StaticBody2D" instance=ExtResource( 14 )]
+position = Vector2( 1208, 385 )
+
+[node name="Jogador" type="KinematicBody2D" parent="."]
+position = Vector2( 496, 304 )
+scale = Vector2( 3.24, 3.24 )
+collision_mask = 6
+script = ExtResource( 2 )
+
+[node name="Anim" type="AnimationPlayer" parent="Jogador"]
+root_node = NodePath("../..")
+autoplay = "idle"
+anims/Dash = SubResource( 1 )
+anims/Hit = SubResource( 2 )
+anims/Jump = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+anims/Run = SubResource( 5 )
+anims/idle = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jogador"]
+light_mask = 2
+position = Vector2( 1.23459, -3.70368 )
+shape = SubResource( 7 )
+
+[node name="Texture" type="Sprite" parent="Jogador"]
+scale = Vector2( 0.0814814, 0.0814815 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( -520, -580 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Jogador"]
+anims/dano = SubResource( 8 )
+
+[node name="Camera2D" type="Camera2D" parent="Jogador"]
+position = Vector2( 4.93828, -9.87655 )
+current = true
+limit_left = -15
+limit_top = -20
+limit_right = 3350
+limit_bottom = 570
+
+[node name="barra_vida" parent="Jogador" instance=ExtResource( 1 )]
+position = Vector2( 1.23458, -37.3457 )
+scale = Vector2( 0.787821, 0.670429 )
+
+[node name="Boss_ovo" parent="." instance=ExtResource( 13 )]
+position = Vector2( 2989, 363 )
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="05" type="ParallaxLayer" parent="Background"]
+position = Vector2( -6.9, -129 )
+motion_mirroring = Vector2( 1080, 0 )
+
+[node name="texture2" type="Sprite" parent="Background/05"]
+position = Vector2( -8.1, -1216 )
+texture = ExtResource( 17 )
+centered = false
+
+[node name="texture" type="Sprite" parent="Background/05"]
+position = Vector2( -8, -320 )
+texture = ExtResource( 18 )
+centered = false
+
+[node name="04" type="ParallaxLayer" parent="Background"]
+position = Vector2( -7, -129 )
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1080, 0 )
+
+[node name="texture" type="Sprite" parent="Background/04"]
+position = Vector2( -8, -320 )
+texture = ExtResource( 16 )
+centered = false
+
+[node name="03" type="ParallaxLayer" parent="Background"]
+position = Vector2( -7, -129 )
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 1080, 0 )
+
+[node name="texture" type="Sprite" parent="Background/03"]
+position = Vector2( 16, -392 )
+texture = ExtResource( 19 )
+centered = false
+
+[node name="02" type="ParallaxLayer" parent="Background"]
+position = Vector2( -7, -129 )
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1080, 0 )
+
+[node name="texture" type="Sprite" parent="Background/02"]
+position = Vector2( -24, -360 )
+texture = ExtResource( 20 )
+centered = false
+
+[node name="01" type="ParallaxLayer" parent="Background"]
+position = Vector2( -7, -129 )
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 1080, 0 )
+
+[node name="texture" type="Sprite" parent="Background/01"]
+position = Vector2( 8, -352 )
+texture = ExtResource( 15 )
+centered = false

@@ -21,6 +21,11 @@ func _physics_process(delta):
 
 
 func causar_dano(body):
-	if(body.name=="Jogador"):
+	if body.name == "Jogador":
+		# Toca a animação de dano no jogador
 		body.get_node("AnimationPlayer").play("dano")
+		# Reduz o número de vidas
 		ScriptGlobal.qtd_vidas -= 1
+		# Remove o projétil da cena
+		queue_free()
+

@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fundo/bg_5.png" type="Texture" id=1]
+[ext_resource path="res://Fonte.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://TelaCreditos.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+extra_spacing_space = -3
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[node name="TelaCreditos" type="Node2D"]
+position = Vector2( 533, 309 )
+scale = Vector2( -0.610825, 0.779952 )
+script = ExtResource( 3 )
+
+[node name="Creditos" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Creditos"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Creditos"]
+position = Vector2( 20.1071, -155.28 )
+scale = Vector2( 1.57782, 1.00901 )
+texture = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Creditos/Sprite"]
+margin_left = -562.667
+margin_top = -252.725
+margin_right = 1184.33
+margin_bottom = 456.275
+rect_scale = Vector2( 0.642191, 1.12616 )
+color = Color( 0.0823529, 0.00784314, 0.00784314, 0.529412 )
+
+[node name="QUIT" type="Label" parent="Creditos/Sprite"]
+margin_left = -442.306
+margin_top = -195.544
+margin_right = -371.306
+margin_bottom = -164.544
+rect_scale = Vector2( -1.01589, 1.86266 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0.839216 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.913725 )
+custom_constants/shadow_offset_x = 2
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 0
+text = "QUIT
+"
+align = 1
+valign = 1
+
+[node name="lblNomes" type="Label" parent="Creditos/Sprite"]
+margin_left = 139.782
+margin_top = 128.48
+margin_right = 446.782
+margin_bottom = 344.48
+rect_scale = Vector2( -1.01589, 1.86266 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0.839216 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.913725 )
+custom_constants/shadow_offset_x = 2
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 0
+text = "GIOVANNA DOS SANTOS REZENDE
+
+LETÍCIA RODRIGUES DA SILVA
+
+GUILHERME DIVINO DO NASCIMENTO FERREIRA
+
+JOÃO VICTOR BRITO TAVARES
+
+LUCAS RESENDE DA SILVA
+
+NICOLLAS SOUSA TEIXEIRA"
+align = 1
+valign = 1
+
+[node name="lblCredits" type="Label" parent="Creditos/Sprite"]
+margin_left = 537.18
+margin_top = -214.604
+margin_right = 635.18
+margin_bottom = -150.604
+rect_scale = Vector2( -0.944483, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "credits"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="CREDITS" type="Label" parent="Creditos/Sprite"]
+margin_left = 535.104
+margin_top = -213.334
+margin_right = 616.104
+margin_bottom = -178.334
+rect_scale = Vector2( -1.01589, 1.86266 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 0.839216 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.913725 )
+custom_constants/shadow_offset_x = 2
+custom_constants/line_spacing = 0
+custom_constants/shadow_offset_y = 2
+custom_constants/shadow_as_outline = 0
+text = "CREDITS
+"
+align = 1
+valign = 1
+
+[node name="btnQuit" type="Button" parent="Creditos/Sprite"]
+margin_left = -521.163
+margin_top = -215.875
+margin_right = -436.163
+margin_bottom = -144.875
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.341176, 0.0117647, 0.0117647, 1 )
+custom_colors/font_color_pressed = Color( 0.341176, 0.0117647, 0.0117647, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "QUIT"
+flat = true
+
+[connection signal="pressed" from="Creditos/Sprite/btnQuit" to="." method="_on_btnQuit_pressed"]

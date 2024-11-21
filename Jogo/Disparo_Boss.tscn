@@ -12,6 +12,7 @@ extents = Vector2( 7.78081, 6.46046 )
 position = Vector2( 487, 307 )
 
 [node name="Disparo_Boss" type="KinematicBody2D" parent="."]
+collision_layer = 4
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Disparo_Boss"]

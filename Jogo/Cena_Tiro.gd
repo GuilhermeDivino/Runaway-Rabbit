@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 	if timer <= 0:
 		queue_free()
 		
+		
 	# Remove o projétil se sair da tela (Não funcionou por conta da Camera2D)
 	# if not get_viewport().get_visible_rect().has_point(position):
 	# 	queue_free()

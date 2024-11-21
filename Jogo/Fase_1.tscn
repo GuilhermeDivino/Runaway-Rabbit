@@ -386,7 +386,7 @@ limit_left = -23
 limit_bottom = 570
 
 [node name="barra_vida" parent="Jogador" instance=ExtResource( 25 )]
-position = Vector2( -111.728, -70.3704 )
+position = Vector2( 1.23458, -37.3457 )
 scale = Vector2( 0.787821, 0.670429 )
 
 [node name="Background" type="ParallaxBackground" parent="."]
@@ -446,4 +446,4 @@ position = Vector2( 5233, -19 )
 scale = Vector2( 2.32, 2.08 )
 
 [node name="Inimigo" parent="." instance=ExtResource( 24 )]
-position = Vector2( 2558, 426 )
+position = Vector2( 2585, 424 )

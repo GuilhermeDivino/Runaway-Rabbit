@@ -9,6 +9,9 @@
 [ext_resource path="res://inimigo-atirador/andando_4.png" type="Texture" id=7]
 [ext_resource path="res://script_Inimigo_tiro.gd" type="Script" id=8]
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 123.66, 62.5549 )
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34, 56 )
 
@@ -139,15 +142,24 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 487.5, 62.5549 )
-
 [node name="Inimigo" type="Node2D"]
 
 [node name="Inimigo_tiro" type="KinematicBody2D" parent="."]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource( 8 )
+
+[node name="area2d" type="Area2D" parent="Inimigo_tiro"]
+position = Vector2( 78, 32 )
+scale = Vector2( 0.31896, 0.31896 )
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo_tiro/area2d"]
+position = Vector2( -224.166, -100.326 )
+rotation = 3.14159
+scale = Vector2( 1.50852, -3.15302 )
+shape = SubResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo_tiro"]
 position = Vector2( 5, 6 )
@@ -164,16 +176,4 @@ anims/andando = SubResource( 4 )
 anims/morto = SubResource( 5 )
 anims/parado = SubResource( 6 )
 
-[node name="area2d" type="Area2D" parent="."]
-position = Vector2( 78, 32 )
-scale = Vector2( 0.31896, 0.31896 )
-collision_layer = 2
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="area2d"]
-position = Vector2( -244.545, -100.326 )
-rotation = 3.14159
-scale = Vector2( 1.50852, -3.15302 )
-shape = SubResource( 7 )
-
-[connection signal="body_entered" from="area2d" to="Inimigo_tiro" method="causando_dano"]
+[connection signal="body_entered" from="Inimigo_tiro/area2d" to="Inimigo_tiro" method="causando_dano"]

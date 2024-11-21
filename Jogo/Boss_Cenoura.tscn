@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Boss_Script.gd" type="Script" id=1]
 [ext_resource path="res://Boss1/HelicopteroBoss.png" type="Texture" id=2]
@@ -13,10 +13,15 @@ length = 0.1
 [sub_resource type="Animation" id=3]
 length = 0.001
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 57, 23 )
+
 [node name="Boss_Cenoura" type="Node2D"]
 position = Vector2( 525, 92 )
 
 [node name="Boss" type="KinematicBody2D" parent="."]
+collision_layer = 4
+collision_mask = 257
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Boss"]
@@ -31,3 +36,11 @@ shape = SubResource( 4 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Boss"]
 anims/Boss = SubResource( 2 )
 anims/RESET = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Boss"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Area2D"]
+position = Vector2( 4, -4 )
+shape = SubResource( 5 )
+
+[connection signal="area_entered" from="Boss/Area2D" to="Boss" method="_on_Area2D_area_entered"]

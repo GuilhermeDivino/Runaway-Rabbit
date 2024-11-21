@@ -121,3 +121,9 @@ func _dash():
 	# Define a velocidade do dash na direção atual do personagem
 	velocity.x = dash_speed * sign($Texture.scale.x)
 	dash_timer = 0.3 # Define o tempo do dash
+
+
+#func causar_dano(body):
+#	if(body.name=="Inimigo"):
+#		body.get_node("AnimationPlayer").play("dano")
+#		ScriptGlobal.qtd_vidas -= 1

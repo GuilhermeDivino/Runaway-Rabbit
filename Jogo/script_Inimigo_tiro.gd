@@ -37,3 +37,8 @@ func atualizar_sprite():
 		$Sprite.flip_h = false  # Direção para a direita
 	elif direcao == 1:
 		$Sprite.flip_h = true  # Direção para a esquerda
+
+func causando_dano(body):
+	if(body.name=="Jogador"):
+		body.get_node("AnimationPlayer").play("dano")
+		ScriptGlobal.qtd_vidas -= 1

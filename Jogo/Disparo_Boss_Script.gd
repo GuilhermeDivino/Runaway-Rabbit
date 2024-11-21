@@ -18,3 +18,9 @@ func _physics_process(delta):
 	# Verifica se o projétil ultrapassou o tempo de vida
 	if time_alive >= lifetime:
 		queue_free()  # Remove o projétil da cena
+
+
+func causar_dano(body):
+	if(body.name=="Jogador"):
+		body.get_node("AnimationPlayer").play("dano")
+		ScriptGlobal.qtd_vidas -= 1

@@ -140,7 +140,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 487.5, 56.5 )
+extents = Vector2( 487.5, 62.5549 )
 
 [node name="Inimigo" type="Node2D"]
 
@@ -165,11 +165,15 @@ anims/morto = SubResource( 5 )
 anims/parado = SubResource( 6 )
 
 [node name="area2d" type="Area2D" parent="."]
+position = Vector2( 78, 32 )
+scale = Vector2( 0.31896, 0.31896 )
 collision_layer = 2
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area2d"]
-position = Vector2( -9.5, 1 )
+position = Vector2( -244.545, -100.326 )
+rotation = 3.14159
+scale = Vector2( 1.50852, -3.15302 )
 shape = SubResource( 7 )
 
-[connection signal="body_entered" from="area2d" to="Inimigo_tiro" method="causar_dano"]
+[connection signal="body_entered" from="area2d" to="Inimigo_tiro" method="causando_dano"]

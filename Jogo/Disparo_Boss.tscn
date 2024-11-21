@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Disparo_Boss_Script.gd" type="Script" id=1]
 [ext_resource path="res://inimigo-atirador/disparo_1.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.78081, 6.46046 )
 
 [node name="Disparo" type="Node2D"]
 position = Vector2( 487, 307 )
@@ -21,3 +24,12 @@ shape = SubResource( 1 )
 [node name="Timer" type="Timer" parent="Disparo_Boss"]
 wait_time = 0.599
 one_shot = true
+
+[node name="Area2D" type="Area2D" parent="Disparo_Boss"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Disparo_Boss/Area2D"]
+position = Vector2( -0.499969, -0.5 )
+scale = Vector2( 1.34947, -1.62527 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Disparo_Boss/Area2D" to="Disparo_Boss" method="causar_dano"]

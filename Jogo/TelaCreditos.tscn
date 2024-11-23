@@ -6,12 +6,13 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 18
-extra_spacing_space = -3
+extra_spacing_space = -8
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
+size = 14
 font_data = ExtResource( 2 )
 
 [node name="TelaCreditos" type="Node2D"]
@@ -36,23 +37,6 @@ margin_right = 1184.33
 margin_bottom = 456.275
 rect_scale = Vector2( 0.642191, 1.12616 )
 color = Color( 0.0823529, 0.00784314, 0.00784314, 0.529412 )
-
-[node name="QUIT" type="Label" parent="Creditos/Sprite"]
-margin_left = -442.306
-margin_top = -195.544
-margin_right = -371.306
-margin_bottom = -164.544
-rect_scale = Vector2( -1.01589, 1.86266 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 0.839216 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 0.913725 )
-custom_constants/shadow_offset_x = 2
-custom_constants/line_spacing = 0
-custom_constants/shadow_offset_y = 2
-custom_constants/shadow_as_outline = 0
-text = "QUIT
-"
-align = 1
-valign = 1
 
 [node name="lblNomes" type="Label" parent="Creditos/Sprite"]
 margin_left = 139.782
@@ -80,45 +64,34 @@ NICOLLAS SOUSA TEIXEIRA"
 align = 1
 valign = 1
 
-[node name="lblCredits" type="Label" parent="Creditos/Sprite"]
-margin_left = 537.18
-margin_top = -214.604
-margin_right = 635.18
-margin_bottom = -150.604
-rect_scale = Vector2( -0.944483, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "credits"
-align = 1
-valign = 1
-uppercase = true
-
 [node name="CREDITS" type="Label" parent="Creditos/Sprite"]
-margin_left = 535.104
-margin_top = -213.334
-margin_right = 616.104
-margin_bottom = -178.334
-rect_scale = Vector2( -1.01589, 1.86266 )
+margin_left = 66.1132
+margin_top = -58.3104
+margin_right = 178.113
+margin_bottom = -20.3104
+rect_scale = Vector2( -1.58316, 2.31911 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 0.839216 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 0.913725 )
 custom_constants/shadow_offset_x = 2
 custom_constants/line_spacing = 0
 custom_constants/shadow_offset_y = 2
 custom_constants/shadow_as_outline = 0
-text = "CREDITS
+custom_fonts/font = SubResource( 4 )
+text = "Creditos
 "
 align = 1
 valign = 1
 
 [node name="btnQuit" type="Button" parent="Creditos/Sprite"]
-margin_left = -521.163
-margin_top = -215.875
-margin_right = -436.163
-margin_bottom = -144.875
-custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+margin_left = -437.118
+margin_top = -257.807
+margin_right = -352.118
+margin_bottom = -186.807
+rect_scale = Vector2( -1.17618, 1.3719 )
 custom_colors/font_color_hover = Color( 0.341176, 0.0117647, 0.0117647, 1 )
 custom_colors/font_color_pressed = Color( 0.341176, 0.0117647, 0.0117647, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "QUIT"
+text = "Sair"
 flat = true
 
 [connection signal="pressed" from="Creditos/Sprite/btnQuit" to="." method="_on_btnQuit_pressed"]

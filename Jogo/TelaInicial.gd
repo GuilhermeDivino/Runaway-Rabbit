@@ -15,14 +15,13 @@ func _ready():
 #	pass
 
 
-func _on_Button_pressed() -> void:
+func _on_btnJogar_pressed():
 	get_tree().change_scene("res://Fase_1.tscn")
-	
 
 
-func _on_btnCredits_pressed():
+func _on_btnCreditos_pressed():
 	get_tree().change_scene("res://TelaCreditos.tscn")
 
 
-func _on_btnQuit_pressed():
+func _on_btnSair_pressed():
 	get_tree().quit()

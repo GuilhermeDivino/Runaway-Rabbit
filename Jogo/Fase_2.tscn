@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://cena_vidas.tscn" type="PackedScene" id=1]
 [ext_resource path="res://script/Jogador.gd" type="Script" id=2]
@@ -20,6 +20,9 @@
 [ext_resource path="res://Fundo/bg_4.png" type="Texture" id=18]
 [ext_resource path="res://Fundo/bg_3.png" type="Texture" id=19]
 [ext_resource path="res://Fundo/bg_2.png" type="Texture" id=20]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 10, 309.5 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "Dash"
@@ -209,7 +212,7 @@ resource_name = "dano"
 [node name="Fase_2" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( -7, -29 )
+position = Vector2( -14, -2 )
 collision_layer = 2
 collision_mask = 5
 
@@ -224,50 +227,12 @@ texture = ExtResource( 12 )
 [node name="Inimigo" parent="StaticBody2D" instance=ExtResource( 14 )]
 position = Vector2( 1208, 385 )
 
-[node name="Jogador" type="KinematicBody2D" parent="."]
-position = Vector2( 496, 304 )
-scale = Vector2( 3.24, 3.24 )
-collision_mask = 6
-script = ExtResource( 2 )
-
-[node name="Anim" type="AnimationPlayer" parent="Jogador"]
-root_node = NodePath("../..")
-autoplay = "idle"
-anims/Dash = SubResource( 1 )
-anims/Hit = SubResource( 2 )
-anims/Jump = SubResource( 3 )
-anims/RESET = SubResource( 4 )
-anims/Run = SubResource( 5 )
-anims/idle = SubResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Jogador"]
-light_mask = 2
-position = Vector2( 1.23459, -3.70368 )
-shape = SubResource( 7 )
-
-[node name="Texture" type="Sprite" parent="Jogador"]
-scale = Vector2( 0.0814814, 0.0814815 )
-texture = ExtResource( 3 )
-centered = false
-offset = Vector2( -520, -580 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Jogador"]
-anims/dano = SubResource( 8 )
-
-[node name="Camera2D" type="Camera2D" parent="Jogador"]
-position = Vector2( 4.93828, -9.87655 )
-current = true
-limit_left = -15
-limit_top = -20
-limit_right = 3350
-limit_bottom = 570
-
-[node name="barra_vida" parent="Jogador" instance=ExtResource( 1 )]
-position = Vector2( 1.23458, -37.3457 )
-scale = Vector2( 0.787821, 0.670429 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, 299.5 )
+shape = SubResource( 9 )
 
 [node name="Boss_ovo" parent="." instance=ExtResource( 13 )]
-position = Vector2( 2989, 363 )
+position = Vector2( 2982, 390 )
 
 [node name="Background" type="ParallaxBackground" parent="."]
 
@@ -324,3 +289,52 @@ motion_mirroring = Vector2( 1080, 0 )
 position = Vector2( 8, -352 )
 texture = ExtResource( 15 )
 centered = false
+
+[node name="Jogador" type="KinematicBody2D" parent="."]
+position = Vector2( 496, 304 )
+scale = Vector2( 3.24, 3.24 )
+collision_mask = 6
+script = ExtResource( 2 )
+
+[node name="Anim" type="AnimationPlayer" parent="Jogador"]
+root_node = NodePath("../..")
+autoplay = "idle"
+anims/Dash = SubResource( 1 )
+anims/Hit = SubResource( 2 )
+anims/Jump = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+anims/Run = SubResource( 5 )
+anims/idle = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jogador"]
+light_mask = 2
+position = Vector2( 1.23459, -3.70368 )
+shape = SubResource( 7 )
+
+[node name="Texture" type="Sprite" parent="Jogador"]
+scale = Vector2( 0.0814814, 0.0814815 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( -520, -580 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Jogador"]
+anims/dano = SubResource( 8 )
+
+[node name="Camera2D" type="Camera2D" parent="Jogador"]
+position = Vector2( 4.93828, -9.87655 )
+current = true
+limit_left = 0
+limit_top = 2
+limit_right = 3350
+limit_bottom = 570
+
+[node name="barra_vida" parent="Jogador" instance=ExtResource( 1 )]
+position = Vector2( 1.23458, -37.3457 )
+scale = Vector2( 0.787821, 0.670429 )
+
+[node name="shoot_cooldown" type="Timer" parent="Jogador"]
+wait_time = 3.163
+autostart = true
+
+[node name="bullet_position" type="Position2D" parent="Jogador"]
+position = Vector2( 25, 0 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Animaçoes/Parado/Parado_2.png" type="Texture" id=1]
 [ext_resource path="res://Animaçoes/Parado/Parado_1_.png" type="Texture" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://Boss_Cenoura.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Cena_Inimigo.tscn" type="PackedScene" id=24]
 [ext_resource path="res://cena_vidas.tscn" type="PackedScene" id=25]
+[ext_resource path="res://door.tscn" type="PackedScene" id=26]
 
 [sub_resource type="TileSet" id=5]
 0/name = "Grama.png 0"
@@ -105,7 +106,10 @@ extents = Vector2( 91.125, 32.5 )
 extents = Vector2( 25, 540.5 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 638.25, 33 )
+extents = Vector2( 961.75, 33 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 17.75, 314 )
 
 [sub_resource type="Animation" id=10]
 resource_name = "Dash"
@@ -302,7 +306,7 @@ tile_set = SubResource( 5 )
 collision_layer = 2
 collision_mask = 5
 format = 1
-tile_data = PoolIntArray( 65604, 2, 0, 65605, 4, 0, 65606, 3, 0, 65612, 2, 0, 65613, 4, 0, 65614, 3, 0, 196680, 2, 0, 196681, 4, 0, 196682, 3, 0, 327748, 2, 0, 327749, 4, 0, 327750, 3, 0, 327756, 2, 0, 327757, 4, 0, 327758, 3, 0, 524354, 2, 0, 524355, 4, 0, 524356, 4, 0, 524357, 4, 0, 524358, 4, 0, 524359, 4, 0, 524360, 4, 0, 524361, 4, 0, 524362, 4, 0, 524363, 4, 0, 524364, 4, 0, 524365, 4, 0, 524366, 4, 0, 524367, 4, 0, 524368, 4, 0, 524369, 4, 0, 524370, 4, 0, 524371, 4, 0, 524372, 4, 0, 524373, 3, 0 )
+tile_data = PoolIntArray( 65604, 2, 0, 65605, 4, 0, 65606, 3, 0, 65612, 2, 0, 65613, 4, 0, 65614, 3, 0, 196680, 2, 0, 196681, 4, 0, 196682, 3, 0, 327748, 2, 0, 327749, 4, 0, 327750, 3, 0, 327756, 2, 0, 327757, 4, 0, 327758, 3, 0, 524354, 2, 0, 524355, 4, 0, 524356, 4, 0, 524357, 4, 0, 524358, 4, 0, 524359, 4, 0, 524360, 4, 0, 524361, 4, 0, 524362, 4, 0, 524363, 4, 0, 524364, 4, 0, 524365, 4, 0, 524366, 4, 0, 524367, 4, 0, 524368, 4, 0, 524369, 4, 0, 524370, 4, 0, 524371, 4, 0, 524372, 4, 0, 524373, 4, 0, 524374, 4, 0, 524375, 4, 0, 524376, 4, 0, 524377, 4, 0, 524378, 4, 0, 524379, 4, 0, 524380, 4, 0, 524381, 4, 0, 524382, 4, 0, 524383, 3, 0 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -346,8 +350,12 @@ position = Vector2( -35, 56.5 )
 shape = SubResource( 12 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 4861.75, 545 )
+position = Vector2( 5185.25, 545 )
 shape = SubResource( 13 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 6131, 261 )
+shape = SubResource( 15 )
 
 [node name="Jogador" type="KinematicBody2D" parent="."]
 position = Vector2( 496, 304 )
@@ -383,11 +391,19 @@ anims/dano = SubResource( 14 )
 position = Vector2( 4.93828, -9.87655 )
 current = true
 limit_left = -23
+limit_right = 6100
 limit_bottom = 570
 
 [node name="barra_vida" parent="Jogador" instance=ExtResource( 25 )]
 position = Vector2( 1.23458, -37.3457 )
 scale = Vector2( 0.787821, 0.670429 )
+
+[node name="shoot_cooldown" type="Timer" parent="Jogador"]
+wait_time = 3.163
+autostart = true
+
+[node name="bullet_position" type="Position2D" parent="Jogador"]
+position = Vector2( 25, 0 )
 
 [node name="Background" type="ParallaxBackground" parent="."]
 
@@ -401,7 +417,7 @@ texture = ExtResource( 19 )
 centered = false
 
 [node name="texture" type="Sprite" parent="Background/05"]
-position = Vector2( -8, -320 )
+position = Vector2( -27.1, -310 )
 texture = ExtResource( 21 )
 centered = false
 
@@ -419,7 +435,8 @@ motion_scale = Vector2( 0.3, 1 )
 motion_mirroring = Vector2( 1080, 0 )
 
 [node name="texture" type="Sprite" parent="Background/03"]
-position = Vector2( 16, -392 )
+position = Vector2( -19, -200 )
+scale = Vector2( 1.00278, 1 )
 texture = ExtResource( 20 )
 centered = false
 
@@ -428,7 +445,7 @@ motion_scale = Vector2( 0.4, 1 )
 motion_mirroring = Vector2( 1080, 0 )
 
 [node name="texture" type="Sprite" parent="Background/02"]
-position = Vector2( -24, -360 )
+position = Vector2( -34, -395 )
 texture = ExtResource( 22 )
 centered = false
 
@@ -437,7 +454,7 @@ motion_scale = Vector2( 0.5, 1 )
 motion_mirroring = Vector2( 1080, 0 )
 
 [node name="texture" type="Sprite" parent="Background/01"]
-position = Vector2( 8, -352 )
+position = Vector2( 10, -354 )
 texture = ExtResource( 17 )
 centered = false
 
@@ -447,3 +464,7 @@ scale = Vector2( 2.32, 2.08 )
 
 [node name="Inimigo" parent="." instance=ExtResource( 24 )]
 position = Vector2( 2585, 424 )
+
+[node name="door" parent="." instance=ExtResource( 26 )]
+position = Vector2( 5976, 493 )
+scale = Vector2( 2, 2 )

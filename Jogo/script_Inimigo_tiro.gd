@@ -42,3 +42,4 @@ func causando_dano(body):
 	if(body.name=="Jogador"):
 		body.get_node("AnimationPlayer").play("dano")
 		ScriptGlobal.qtd_vidas -= 1
+
